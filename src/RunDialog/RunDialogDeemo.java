@@ -78,7 +78,7 @@ public class RunDialogDeemo {
 		}
 		// ---------------------------
 		// -******
-		 Long time1 = System.currentTimeMillis();
+
 		try {
 			URL zeroFile = new URL(lines1);
 			BufferedInputStream bs = new BufferedInputStream(
@@ -100,9 +100,6 @@ public class RunDialogDeemo {
 
 		reader.close();
 		System.out.println("=========get request接收資料內容結束============");
-		
-		Long time2 = System.currentTimeMillis();
-		          System.out.println("Time spent: " + (int)(time2-time1) /60000 +"分"+ ((int)(time2-time1)/1000)%60 + " 秒.");
 		httpConn.disconnect();
 	}
 
