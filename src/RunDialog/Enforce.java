@@ -18,7 +18,9 @@ public class Enforce extends JFrame {
      * 
      */
     private static final long serialVersionUID = 1L;
+
     private JPanel contentPane;
+
     private JTextField textField;
 
     /**
@@ -48,16 +50,16 @@ public class Enforce extends JFrame {
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
-        
+
         JLabel label = new JLabel("網址");
         label.setBounds(10, 115, 32, 15);
         contentPane.add(label);
-        
+
         textField = new JTextField();
         textField.setBounds(52, 112, 372, 21);
         contentPane.add(textField);
         textField.setColumns(10);
-        
+
         JButton button = new JButton("下載");
         button.setBounds(158, 198, 87, 23);
         button.addActionListener(new ActionListener() {
@@ -71,6 +73,7 @@ public class Enforce extends JFrame {
         });
         contentPane.add(button);
     }
+
     // button觸發
     protected void do_button_actionPerformed(ActionEvent e) throws Exception {
         // 判斷結尾是否有斜線20120423
@@ -78,15 +81,13 @@ public class Enforce extends JFrame {
         myList.add(textField.getText());
         int a = myList.get(0).length() - 1;
         String path = textField.getText();
-        if (!myList.get(0).substring(0, 7).equals("http://")) {
-            path = "http://" + textField.getText();
-        }
         if (!myList.get(0).substring(a).equals("/")) {
             path = textField.getText() + "/";
         }
-        // String string = args[0];
-        // System.out.println("last character: " +
-        // string.substring(string.length() - 1));
+        if (!myList.get(0).substring(0, 7).equals("http://")) {
+            path = "http://" +path;
+        }
+      
         RunDialogDeemo.getPageData(path);
     }
 }
