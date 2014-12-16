@@ -74,6 +74,7 @@ public class Enforce extends JFrame {
         contentPane.add(button);
     }
 
+/*幹你媽的怎麼這麼難玩 哭哭*/
     // button觸發
     protected void do_button_actionPerformed(ActionEvent e) throws Exception {
         // 判斷結尾是否有斜線20120423
